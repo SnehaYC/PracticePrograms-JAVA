@@ -44,7 +44,7 @@ class Number
 //---------------------------------------------------------
 //Entry Point Function
 //---------------------------------------------------------
-class Program_19
+class Program_01
 {
 	public static void main(String d[])
 	{

@@ -13,7 +13,7 @@
 import java.util.Scanner;
 
 //---------------------------------------------------------
-// Function Name: Display
+// Function Name: EvenDigits
 // Input        : Integer
 // Output       : Integer
 // Description  : This function accept number from user and 
@@ -50,7 +50,7 @@ class Number
 //---------------------------------------------------------
 //Entry Point Function
 //---------------------------------------------------------
-class Program_21
+class Program_10
 {
 	public static void main(String d[])
 	{

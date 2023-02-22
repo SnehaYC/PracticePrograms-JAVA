@@ -1,10 +1,10 @@
-// Accept number from user and check whether that number is pallindrom or not
+// Accept number from user and return the largest digit
 // Input : 7521
-// Output : False
+// Output : 7
 // Input : 121
-// Output : True
-// Input : 75057
-// Output : True
+// Output : 2
+// Input : 56892
+// Output : 9
 
 //---------------------------------------------------------
 // Imports
@@ -13,11 +13,11 @@
 import java.util.Scanner;
 
 //---------------------------------------------------------
-// Function Name: CheckPallindrome
+// Function Name: MaxDigit
 // Input        : Integer
 // Output       : Integer
 // Description  : This function accept number and return 
-//                its reverse number.
+//                the largest digit.
 // Author       : Sneha Yogesh Choudhari
 //---------------------------------------------------------
 
@@ -25,38 +25,36 @@ class Number
 {
 	public
 	
-	boolean CheckPallindrome(int iNo)
+	int MaxDigit(int iNo)
 	{
-		int iDigit =0, iRev = 0, iTemp = 0;
+		int iDigit = 0, iMax = 0;
 		if(iNo < 0)
-		{   iNo = -iNo; }
-		iTemp = iNo;
+		{iNo = -iNo;}
 		while(iNo > 0)
 		{
 			iDigit = iNo % 10;
-			iRev = (iRev * 10) + iDigit;
+			if(iDigit > iMax)
+			{
+				iMax = iDigit;
+				if(iMax == 9)
+				{
+					break;
+				}
+			}
 			iNo = iNo / 10;
 		}
-		if(iRev == iTemp)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		return iMax;
 	}
 }
 
 //---------------------------------------------------------
 //Entry Point Function
 //---------------------------------------------------------
-class Program_26
+class Program_05
 {
 	public static void main(String arg[])
 	{
-		int iValue = 0;
-		boolean bRet = false;
+		int iValue = 0, iRet = 0;
 		
 		Scanner in = new Scanner(System.in);
 		
@@ -64,18 +62,15 @@ class Program_26
 		iValue = in.nextInt();
 		
 		Number obj = new Number();
-		bRet = obj.CheckPallindrome(iValue);
+		iRet = obj.MaxDigit(iValue);
 		
-		if(bRet == true)
-		{
-			System.out.print("It is pallindrome.\n");
-		}
-		else
-		{
-			System.out.print("It is not pallindrome.\n");
-		}
+		System.out.print("Largest digit is:" + iRet);
+		
 	}
 }
+
+
+
 
 
 

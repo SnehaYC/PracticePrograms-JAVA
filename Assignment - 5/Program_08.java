@@ -1,10 +1,8 @@
-// Accept number from user and return the smallest digit
-// Input : 7526
-// Output : 2
-// Input : 101
-// Output : 0
-// Input : 58902
-// Output : 0
+// Accept number from user and return multiplication of digits.
+// Input : 7521
+// Output : 70
+// Input : 4502
+// Output : 40
 
 //---------------------------------------------------------
 // Imports
@@ -13,11 +11,11 @@
 import java.util.Scanner;
 
 //---------------------------------------------------------
-// Function Name: MinDigit
+// Function Name: MultDigit
 // Input        : Integer
 // Output       : Integer
 // Description  : This function accept number and return 
-//                the smallest digit.
+//                multiplication of digits.
 // Author       : Sneha Yogesh Choudhari
 //---------------------------------------------------------
 
@@ -25,32 +23,30 @@ class Number
 {
 	public
 	
-	int MinDigit(int iNo)
+	int MultDigit(int iNo)
 	{
-		int iDigit = 0, iMin = 9;
+		int iDigit = 0, iMult = 1;
 		if(iNo < 0)
-		{iNo = -iNo;}
+		{   iNo = -iNo; }
+		if(iNo == 0)
+		{ return 0;}
 		while(iNo > 0)
 		{
 			iDigit = iNo % 10;
-			if(iDigit < iMin)
+			if(iDigit != 0)
 			{
-				iMin = iDigit;
-				if(iMin == 0)
-				{
-					break;
-				}
+				iMult = iMult * iDigit;
 			}
 			iNo = iNo / 10;
 		}
-		return iMin;
+		return iMult;
 	}
 }
 
 //---------------------------------------------------------
 //Entry Point Function
 //---------------------------------------------------------
-class Program_28
+class Program_08
 {
 	public static void main(String arg[])
 	{
@@ -62,16 +58,11 @@ class Program_28
 		iValue = in.nextInt();
 		
 		Number obj = new Number();
-		iRet = obj.MinDigit(iValue);
+		iRet = obj.MultDigit(iValue);
 		
-		System.out.print("Smallest digit is:" + iRet);
-		
+		System.out.print("Multiplication of digits: " + iRet);
 	}
 }
-
-
-
-
 
 
 

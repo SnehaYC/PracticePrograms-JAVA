@@ -1,10 +1,10 @@
-// Accept number from user and return the largest digit
+// Accept number from user and check whether that number is pallindrom or not
 // Input : 7521
-// Output : 7
+// Output : False
 // Input : 121
-// Output : 2
-// Input : 56892
-// Output : 9
+// Output : True
+// Input : 75057
+// Output : True
 
 //---------------------------------------------------------
 // Imports
@@ -13,11 +13,11 @@
 import java.util.Scanner;
 
 //---------------------------------------------------------
-// Function Name: MaxDigit
+// Function Name: CheckPallindrome
 // Input        : Integer
 // Output       : Integer
 // Description  : This function accept number and return 
-//                the largest digit.
+//                its reverse number.
 // Author       : Sneha Yogesh Choudhari
 //---------------------------------------------------------
 
@@ -25,36 +25,38 @@ class Number
 {
 	public
 	
-	int MaxDigit(int iNo)
+	boolean CheckPallindrome(int iNo)
 	{
-		int iDigit = 0, iMax = 0;
+		int iDigit =0, iRev = 0, iTemp = 0;
 		if(iNo < 0)
-		{iNo = -iNo;}
+		{   iNo = -iNo; }
+		iTemp = iNo;
 		while(iNo > 0)
 		{
 			iDigit = iNo % 10;
-			if(iDigit > iMax)
-			{
-				iMax = iDigit;
-				if(iMax == 9)
-				{
-					break;
-				}
-			}
+			iRev = (iRev * 10) + iDigit;
 			iNo = iNo / 10;
 		}
-		return iMax;
+		if(iRev == iTemp)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }
 
 //---------------------------------------------------------
 //Entry Point Function
 //---------------------------------------------------------
-class Program_27
+class Program_04
 {
 	public static void main(String arg[])
 	{
-		int iValue = 0, iRet = 0;
+		int iValue = 0;
+		boolean bRet = false;
 		
 		Scanner in = new Scanner(System.in);
 		
@@ -62,15 +64,18 @@ class Program_27
 		iValue = in.nextInt();
 		
 		Number obj = new Number();
-		iRet = obj.MaxDigit(iValue);
+		bRet = obj.CheckPallindrome(iValue);
 		
-		System.out.print("Largest digit is:" + iRet);
-		
+		if(bRet == true)
+		{
+			System.out.print("It is pallindrome.\n");
+		}
+		else
+		{
+			System.out.print("It is not pallindrome.\n");
+		}
 	}
 }
-
-
-
 
 
 

@@ -11,7 +11,7 @@
 import java.util.Scanner;
 
 //---------------------------------------------------------
-// Function Name: Display
+// Function Name: DigitFrequency
 // Input        : Integer
 // Output       : Integer
 // Description  : This function accept number and one digit
@@ -49,7 +49,7 @@ class Number
 //---------------------------------------------------------
 //Entry Point Function
 //---------------------------------------------------------
-class Program_22
+class Program_09
 {
 	public static void main(String d[])
 	{

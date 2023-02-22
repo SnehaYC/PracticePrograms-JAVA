@@ -1,10 +1,6 @@
-// Accept number from user and return its reverse number.
+//Accept number from user and display the summation of digits.
 // Input : 7521
-// Output : 1257
-// Input : 4502
-// Output : 2054
-// Input : 7500
-// Output : 57
+// Output :  15     (7+5+2+1)
 
 //---------------------------------------------------------
 // Imports
@@ -13,11 +9,11 @@
 import java.util.Scanner;
 
 //---------------------------------------------------------
-// Function Name: Reverse
+// Function Name: SumDigits
 // Input        : Integer
 // Output       : Integer
-// Description  : This function accept number and return 
-//                its reverse number.
+// Description  : This function Accept number from user if numbers  
+//                less than 10 then print Hello otherwise print Demo. 
 // Author       : Sneha Yogesh Choudhari
 //---------------------------------------------------------
 
@@ -25,43 +21,43 @@ class Number
 {
 	public
 	
-	int Reverse(int iNo)
+	int SumDigits(int iNo)
 	{
-		int iDigit = 0, iRev = 0;
+		int iDigit = 0, iSum = 0;
 		if(iNo < 0)
-		{iNo = -iNo;}
-		
+		{
+			iNo = -iNo;
+		}
 		while(iNo > 0)
 		{
-			iDigit = iNo % 10;
-			iRev = (iRev * 10) + iDigit;
+			iSum = iSum + (iNo % 10);
 			iNo = iNo / 10;
 		}
-		return iRev;
+		return iSum;
 	}
 }
+
 
 //---------------------------------------------------------
 //Entry Point Function
 //---------------------------------------------------------
-class Program_24
+class Program_02
 {
-	public static void main(String arg[])
+	public static void main(String d[])
 	{
 		int iValue = 0, iRet = 0;
 		
-		Scanner in = new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Enter number: ");
-		iValue = in.nextInt();
+		iValue = sc.nextInt();
 		
 		Number obj = new Number();
-		iRet = obj.Reverse(iValue);
+		iRet = obj.SumDigits(iValue);
 		
-		System.out.print("Reverse number is: " + iRet);
+		System.out.print("Summation of digits: " + iRet);
 	}
 }
-
 
 
 
