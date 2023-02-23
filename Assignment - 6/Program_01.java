@@ -1,9 +1,4 @@
-/* Accept N numbers from user and return difference between summation 
-of even elements and summation of odd elements. 
-Input : N : 6 
- Elements : 85 66 3 80 93 88
-Output : 53 (234 - 181)  
-*/
+// Accept N number from user and display that number. 
 
 //----------------------------------------------------------
 // Imports
@@ -11,35 +6,23 @@ Output : 53 (234 - 181)
 import java.util.*;
 
 //----------------------------------------------------------
-// Function Name: Difference
+// Function Name: Display
 // Input        : Integer
 // Output       : Integer
-// Discription  : This function accept N numbers from user and 
-//                return difference between summation of even 
-//                elements and summation of odd elements.    
+// Discription  : This function accept N numbers from user and display all that numbers.    
 // Author       : Sneha Yogesh Choudhari
 //-----------------------------------------------------------
 
-class Number
+class Numbers
 {
 	public
 	
-	int Difference(int Arr[]) 
+	void Display(int Arr[]) 
 	{ 
-		int iSumEven = 0, iSumOdd = 0;
-		
 		for(int iCnt = 0; iCnt < Arr.length; iCnt++)
 		{
-			if((Arr[iCnt]%2)==0)
-			{
-				iSumEven = iSumEven + Arr[iCnt];
-			}
-			else
-			{
-				iSumOdd = iSumOdd + Arr[iCnt];
-			}
+			System.out.print("  " + Arr[iCnt]);
 		}
-		return iSumEven - iSumOdd;
 	} 
 }
 
@@ -48,33 +31,29 @@ class Number
 //----------------------------------------------------------
 class Program_01
 {
-	public static void main(String arg[]) 
-	{ 
-		int iSize = 0,iRet = 0,iCnt = 0; 
+	public static void main(String b[])
+	{
+		int iSize = 0;
 		
-		Scanner sobj = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
 		
-		System.out.println("Enter number of elements: "); 
-		iSize = sobj.nextInt();
+		System.out.print("Enter number of elements: ");
+		iSize = in.nextInt();
 		
 		int Arr[] = new int[iSize];
 		
-		if(iSize == 0)
-		{
-			return;
-		}
-		System.out.println("Please enter " + iSize + " elements: "); 
+		System.out.println("Please enter " + iSize + " elements: ");
 		
-		for(iCnt = 0; iCnt < Arr.length; iCnt++)
+		for(int iCnt = 0; iCnt < Arr.length; iCnt++)
 		{
-			Arr[iCnt] = sobj.nextInt();
+			Arr[iCnt] = in.nextInt();
 		}
 		
-		Number obj = new Number();
+		Numbers obj = new Numbers();
 		
-		iRet = obj.Difference(Arr);
-		System.out.println("Difference is: "+ iRet); 
-	 
+		obj.Display(Arr);
+		
+		Arr = null;
 	}
 	
 }

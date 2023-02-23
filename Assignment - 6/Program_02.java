@@ -2,7 +2,7 @@
 divisible by 5. 
 Input : N : 6 
  Elements : 85 66 3 80 93 88 
-Output : 85 80  
+Output : 85 0 
 */
 
 //----------------------------------------------------------
@@ -61,8 +61,6 @@ class Program_02
 		Numbers obj = new Numbers();
 		
 		obj.Display(Arr);
-		
-		
 	}
 	
 }
