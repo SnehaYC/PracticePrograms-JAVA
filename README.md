@@ -8,6 +8,8 @@ Topic:
 2. Assignment 2 -> Problems on Numbers.
 3. Assignmnet 3 -> Problems on Pattern.
 4. Assignmnet 4 -> Problems on Range.
-5. Assignmnet 5 -> Problems on 'N' Number.
+5. Assignment 5 -> Problems on Digits.
+6. Assignmnet 6 -> Problems on 'N' Number.
+7. Assignment 7 -> Problems on String.
 
 Many more to come..
