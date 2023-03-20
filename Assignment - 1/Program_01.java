@@ -1,7 +1,7 @@
 // Write a program to print "Jay Ganesh" on screen.
 
 //----------------------------------------------
-// Description   :  This function Display the output using cout
+// Description   :  This function Display the output
 // Author        :  Sneha Yogesh Choudhari
 //----------------------------------------------
 
